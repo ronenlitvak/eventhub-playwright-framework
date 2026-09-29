@@ -35,7 +35,7 @@ Playwright + TypeScript test suite for EventHub (https://eventhub.rahulshettyaca
    cp .env.example .env
    ```
 
-5. `.env` is gitignored, so it doesn't come down with `git clone` - `.env.example` only has the variable names, no values. Contact me (the project owner) to get the real `EVENTHUB_EMAIL`, `EVENTHUB_PASSWORD`, `TEST_CUSTOMER_NAME` and `TEST_CUSTOMER_PHONE` values, then fill them into your local `.env`:
+5. `.env` is gitignored, so it doesn't come down with `git clone` - `.env.example` only has the variable names, no values. Contact me (the project owner lironen@gmail.com) to get the real `EVENTHUB_EMAIL`, `EVENTHUB_PASSWORD`, `TEST_CUSTOMER_NAME` and `TEST_CUSTOMER_PHONE` values, then fill them into your local `.env`:
    ```
    EVENTHUB_EMAIL=
    EVENTHUB_PASSWORD=
