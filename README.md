@@ -12,24 +12,46 @@ Playwright + TypeScript test suite for EventHub (https://eventhub.rahulshettyaca
 - `tests/` - the specs
 - `docs/test-cases/` - test cases written out in plain language
 
-## Setup
+## How to run the project locally
 
-```bash
-npm install
-npx playwright install
-cp .env.example .env
-```
+1. Clone the repo and move into it:
+   ```bash
+   git clone https://github.com/ronenlitvak/eventhub-playwright-framework.git
+   cd eventhub-playwright-framework
+   ```
 
-Fill in `.env`:
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-```
-EVENTHUB_EMAIL=
-EVENTHUB_PASSWORD=
-TEST_CUSTOMER_NAME=
-TEST_CUSTOMER_PHONE=
-```
+3. Install the Playwright browsers (npm install alone doesn't download these):
+   ```bash
+   npx playwright install
+   ```
 
-(`.env` is gitignored, don't commit real credentials)
+4. Create your local `.env` file from the example:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. `.env` is gitignored, so it doesn't come down with `git clone` - `.env.example` only has the variable names, no values. Contact me (the project owner) to get the real `EVENTHUB_EMAIL`, `EVENTHUB_PASSWORD`, `TEST_CUSTOMER_NAME` and `TEST_CUSTOMER_PHONE` values, then fill them into your local `.env`:
+   ```
+   EVENTHUB_EMAIL=
+   EVENTHUB_PASSWORD=
+   TEST_CUSTOMER_NAME=
+   TEST_CUSTOMER_PHONE=
+   ```
+
+6. Run the tests:
+   ```bash
+   npm test
+   ```
+
+7. Playwright writes an HTML report after each run. Open the latest one with:
+   ```bash
+   npm run test:report
+   ```
 
 ## Running tests
 
