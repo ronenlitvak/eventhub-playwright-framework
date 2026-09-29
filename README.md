@@ -1,6 +1,6 @@
 # EventHub Playwright Framework
 
-Playwright + TypeScript test suite for EventHub (https://eventhub.rahulshettyacademy.com/login) - an event booking app. Covers login, the home page, booking a ticket, and the auth API.
+Playwright + TypeScript test suite for EventHub (https://eventhub.rahulshettyacademy.com) - an event booking app. Covers login, the home page, booking a ticket, and the auth API.
 
 ![Playwright Tests](https://github.com/ronenlitvak/eventhub-playwright-framework/actions/workflows/playwright.yml/badge.svg)
 
