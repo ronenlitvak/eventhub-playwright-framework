@@ -45,13 +45,16 @@ export class HomePage {
     // cards, so relying on it would break the moment the app gives each card a unique id.
     this.eventCards = page.getByRole('article');
     this.eventFestivalDetail = page.getByRole('article').filter({ hasText: 'Dilli Diwali Mela' });
-    this.seatsFestivalAvailable = this.eventFestivalDetail.locator('span.text-emerald-600');
+    // Matched by text, not a color class — low-stock events show "X seats left!" in a
+    // different color than the normal "X seats available", so a class-based locator
+    // only works for one of the two states.
+    this.seatsFestivalAvailable = this.eventFestivalDetail.getByText(/\d+ seats?/);
     this.eventConcertDetail = page.getByRole('article').filter({ hasText: 'Hollywood Monsoon Night — Los Angeles' });
     this.eventConcertPrice = this.eventConcertDetail.locator('p.text-indigo-700');
-    this.seatsConcertAvailable = this.eventConcertDetail.locator('span.text-emerald-600');
+    this.seatsConcertAvailable = this.eventConcertDetail.getByText(/\d+ seats?/);
     this.eventConferenceDetail = page.getByRole('article').filter({ hasText: 'World Tech Summit' });
     this.eventConferencePrice = this.eventConferenceDetail.locator('p.text-indigo-700');
-    this.seatsConferenceAvailable = this.eventConferenceDetail.locator('span.text-emerald-600');
+    this.seatsConferenceAvailable = this.eventConferenceDetail.getByText(/\d+ seats?/);
     this.browseEventsLink = page.getByRole('main').getByRole('link', { name: /browse events/i });
     this.myBookingsLink = page.getByRole('main').getByRole('link', { name: /My Bookings/i });
     this.exploreAllEventsLink = page.getByRole('main').getByRole('link', { name: /Explore All Events/i });

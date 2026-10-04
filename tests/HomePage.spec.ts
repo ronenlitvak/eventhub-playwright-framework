@@ -61,7 +61,7 @@ test.describe('Home page test', () => {
     await expect(eventCard.getByText('Festival')).toBeVisible();
     await expect(eventCard.locator('p.text-indigo-700')).toHaveText('$300');
     const seatsAvailable = homePage.seatsFestivalAvailable;
-    await expect(seatsAvailable).toHaveText(/\d+ seats available/);
+    await expect(seatsAvailable).toHaveText(/\d+ seats? (available|left!)/);
   });
 
   test('Check Concert event details', async ({ homePage }) => {
@@ -71,7 +71,7 @@ test.describe('Home page test', () => {
     const price = homePage.eventConcertPrice;
     await expect(price).toHaveText('$2,500');
     const seatsAvailable = homePage.seatsConcertAvailable;
-    await expect(seatsAvailable).toHaveText(/\d+ seats available/);
+    await expect(seatsAvailable).toHaveText(/\d+ seats? (available|left!)/);
 
   });
 
@@ -82,7 +82,7 @@ test.describe('Home page test', () => {
     const price = homePage.eventConferencePrice;
     await expect(price).toHaveText('$1,500');
     const seatsAvailable = homePage.seatsConferenceAvailable;
-    await expect(seatsAvailable).toHaveText(/\d+ seats available/);
+    await expect(seatsAvailable).toHaveText(/\d+ seats? (available|left!)/);
   });
 
   test('browse events button navigation', async ({ homePage }) => {
