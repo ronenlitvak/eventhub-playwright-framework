@@ -19,6 +19,11 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+        EVENTHUB_EMAIL: ${{ secrets.EVENTHUB_EMAIL }}
+        EVENTHUB_PASSWORD: ${{ secrets.EVENTHUB_PASSWORD }}
+        TEST_CUSTOMER_NAME: ${{ secrets.TEST_CUSTOMER_NAME }}
+        TEST_CUSTOMER_PHONE: ${{ secrets.TEST_CUSTOMER_PHONE }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
